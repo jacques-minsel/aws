@@ -17,13 +17,13 @@ MY_STATE=$(echo "$OUT" | grep STATE | head -n 1 | cut -d'"' -f4)
 
 #Wait for ami is in availaible status
     while [[ $MY_STATE = pending ]]; do  
-    echo "AMI is not ready it still pending baby"
+    echo "AMI is not ready it still pending"
     sleep 5
     OUT=$(aws ec2 describe-images --image-ids "$OUT" --output text)
     MY_STATE=$(echo "$OUT" | grep STATE | cut -d'"' -f4)   
     done
     if [[ $MY_STATE != availaible ]]; then
-  echo "start to change this mother fucker"
+  echo "start to change "
     fi
 sleep 10
 # stop a Ec2 instance
